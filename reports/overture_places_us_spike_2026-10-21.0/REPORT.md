@@ -11,6 +11,19 @@
 
 Báo cáo này là bằng chứng về quy mô/schema/độ sẵn có trường của nguồn dữ liệu sau lọc Hoa Kỳ. Nó **không** chứng minh mức sẵn sàng chi trả, khả năng bán trên marketplace hay quyền tái phân phối thương mại. Chưa kiểm chứng nhu cầu người mua; trạng thái giấy phép vẫn phải được rà soát theo từng nguồn thành phần.
 
+## Báo cáo trực quan quyết định
+
+Mở `DECISION_REPORT.html` để xem biểu đồ độ sẵn có trường, quy mô category,
+heatmap liên hệ, operating status, confidence, inventory license và bảng
+provenance/điểm dừng. Báo cáo chỉ dùng artifact tổng hợp, không nhúng record
+nguồn.
+
+Tạo lại bằng:
+
+```powershell
+python tools/build_overture_decision_report.py
+```
+
 ## Phạm vi và provenance
 
 - Census: TIGERweb ACS2025 layer `80`, 56 đơn vị; SHA-256 `4576e828397491111baaf22d472f2557eea31e966b2444f841f8041614d84ca4`.
@@ -132,3 +145,6 @@ Bảng dưới là tối đa 20 category chính theo số dòng. CSV đầy đ�
 - `confidence_distribution.csv`: phân bố confidence theo khoảng.
 - `geometry_profile.json`: kiểm tra geometry theo batch.
 - `spike_manifest.json`: nguồn, hash, package và chỉ số đầy đủ.
+- `DECISION_REPORT.html`: bản trực quan hỗ trợ quyết định.
+- `license_inventory.csv` và `license_inventory.sql`: inventory license theo
+  source/property và truy vấn DuckDB tái lập.

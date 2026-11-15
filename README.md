@@ -63,6 +63,22 @@ Báo cáo gồm schema, null/blank/list-rỗng, độ sẵn có trường sản 
 category/status, provenance và giới hạn diễn giải. Chỉ số chất lượng nguồn
 không thay thế bằng chứng nhu cầu hoặc giao dịch của người mua.
 
+Báo cáo trực quan hỗ trợ quyết định cho snapshot đã có:
+
+```powershell
+python tools/build_overture_decision_report.py
+```
+
+Mở `reports/overture_places_us_spike_2026-10-21.0/DECISION_REPORT.html` trong
+trình duyệt. Báo cáo HTML tự chứa biểu đồ SVG, bảng và ghi chú; không tải
+JavaScript, font hoặc thư viện bên ngoài.
+
+Các giả thuyết pain point và đặc tả Top 3 sản phẩm cho Gumroad/Apify:
+`reports/overture_places_us_spike_2026-10-21.0/DISCOVERY_BRIEF.md` và
+`reports/overture_places_us_spike_2026-10-21.0/PRODUCT_DESIGN_TOP3.md`.
+Đây là tài liệu thiết kế/kiểm chứng; chưa phải phê duyệt tái phân phối dữ liệu
+hoặc cho phép publish product.
+
 Lập kế hoạch lấy Places Hoa Kỳ từ phiên bản Overture mới nhất (đọc STAC metadata
 để ước tính dung lượng; chưa tải GeoParquet):
 

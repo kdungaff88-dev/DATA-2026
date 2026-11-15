@@ -91,6 +91,9 @@ Lệnh tạo báo cáo chỉ chạy sau khi downloader hoàn tất thành công.
 
 - **Mini Data Spike Overture Places US:** Hoàn thành ngày 2026-11-15. Kế hoạch,
   lệnh chạy, manifest, checksum, profile và báo cáo đã được lưu trong repo.
+- **Báo cáo trực quan quyết định:** Đã tạo `DECISION_REPORT.html` bằng
+  `tools/build_overture_decision_report.py`; chart/table lấy từ artifact tổng
+  hợp, không đọc hoặc nhúng record nguồn.
 - **Rà soát điều khoản chung Overture:** Đã ghi các quyền theo CDLA-Permissive-
   2.0, Apache-2.0, CC0-1.0, các nghĩa vụ ODbL và quy tắc theo source/property
   trong `docs/OVERTURE_LICENSE_POLICY.md`. Inventory và SQL tái lập được lưu
@@ -112,6 +115,28 @@ Lệnh tạo báo cáo chỉ chạy sau khi downloader hoàn tất thành công.
   4. Hoàn tất đối chiếu AUP, phí và tình trạng payout của kênh bán. Việc cập
      nhật thông tin thanh toán hoặc hoàn tất KYC không được ghi là payout đã
      thử thành công.
+- **ROAD-13 — Pain-point scan:** Đã ghi 25 mục vào DB2 ngày 2026-11-15
+  (20 job listing, 4 review G2, 1 Salesforce community discussion). Từng dòng
+  có người mua, pain/workaround, URL, ngày truy cập, funnel stage và mức chắc
+  chắn/rủi ro. Job/review không đồng nghĩa giao dịch thành công. Bốn review G2
+  cần xác nhận lại trên trang gốc; giữ mức chắc chắn thấp.
+- **ROAD-15 — Gom pain point / loại rủi ro đỏ:** Đã thêm 8 giả thuyết mới vào
+  DB2 ở `2. Long-list Niche`, tất cả vàng vì chưa hoàn tất rà rights/ToS. Một
+  mô hình personal owner-contact/skip-tracing/cold outreach được đánh dấu
+  `Đã loại (Killed)`; pain evidence thô vẫn được giữ. Dòng xanh mẫu trong DB2
+  không tính là nghiên cứu thật. Chưa tìm được điều khoản chính thức chứng minh
+  một nguồn cụ thể cấm resale; workflow Maps/directory/portal vẫn bị chặn cho
+  tới khi terms được xác minh.
+- **Gate 1 — Đang xử lý:** chủ dự án tạm xác nhận Gumroad/Apify đã chấp nhận
+  tài khoản và đã xử lý tài khoản nhận payout bằng VND. DB1 ghi nhận account
+  acceptance và payout setup theo xác nhận này, không khẳng định đã có tiền
+  thực nhận. Còn rà AUP và quyền nguồn theo từng sản phẩm.
+- **ROAD-12 / Gate 2 — Đang xử lý:** đã chọn Top 3 để thiết kế cho hai sàn:
+  (1) theo dõi license nhà thầu HVAC/điện; (2) CRM company-record hygiene;
+  (3) báo cáo độ phủ website doanh nghiệp dịch vụ địa phương. Cả ba còn vàng
+  hoặc confidence thấp; chưa có rights/ToS clearance, buyer interview hay paid
+  transaction. Bốn G2 review gốc vẫn chưa xác minh. Chi tiết tại
+  `PRODUCT_DESIGN_TOP3.md`; chưa phát hành record thật.
 - **Điều kiện trước khi build/listing:** quyền và nghĩa vụ license được xác
   nhận cho mô hình dự kiến; có bằng chứng nhu cầu cụ thể từ người mua; marketplace
   cho phép loại sản phẩm và có đường payout khả thi. Nếu thiếu một điều kiện,
