@@ -1,0 +1,103 @@
+{
+  "generated_at_utc": "2026-11-15T13:03:02.088450+00:00",
+  "tool_version": "0.1.0",
+  "input_label": "Overture Places US 2026-10-21.0",
+  "row_count": 18560038,
+  "input_files": [
+    {
+      "name": "place.geoparquet",
+      "bytes": 3950607007,
+      "sha256": null
+    }
+  ],
+  "schema": [
+    {
+      "column": "id",
+      "data_type": "VARCHAR"
+    },
+    {
+      "column": "geometry",
+      "data_type": "GEOMETRY('OGC:CRS84')"
+    },
+    {
+      "column": "confidence",
+      "data_type": "DOUBLE"
+    },
+    {
+      "column": "websites",
+      "data_type": "VARCHAR[]"
+    },
+    {
+      "column": "emails",
+      "data_type": "VARCHAR[]"
+    },
+    {
+      "column": "socials",
+      "data_type": "VARCHAR[]"
+    },
+    {
+      "column": "phones",
+      "data_type": "VARCHAR[]"
+    },
+    {
+      "column": "brand",
+      "data_type": "STRUCT(wikidata VARCHAR, \"names\" STRUCT(\"primary\" VARCHAR, common MAP(VARCHAR, VARCHAR), rules STRUCT(variant VARCHAR, \"language\" VARCHAR, perspectives STRUCT(\"mode\" VARCHAR, countries VARCHAR[]), \"value\" VARCHAR, \"between\" DOUBLE[], side VARCHAR)[]))"
+    },
+    {
+      "column": "addresses",
+      "data_type": "STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]"
+    },
+    {
+      "column": "names",
+      "data_type": "STRUCT(\"primary\" VARCHAR, common MAP(VARCHAR, VARCHAR), rules STRUCT(variant VARCHAR, \"language\" VARCHAR, perspectives STRUCT(\"mode\" VARCHAR, countries VARCHAR[]), \"value\" VARCHAR, \"between\" DOUBLE[], side VARCHAR)[])"
+    },
+    {
+      "column": "sources",
+      "data_type": "STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, \"between\" DOUBLE[], provider VARCHAR, \"resource\" VARCHAR, \"version\" VARCHAR)[]"
+    },
+    {
+      "column": "operating_status",
+      "data_type": "VARCHAR"
+    },
+    {
+      "column": "basic_category",
+      "data_type": "VARCHAR"
+    },
+    {
+      "column": "taxonomy",
+      "data_type": "STRUCT(\"primary\" VARCHAR, hierarchy VARCHAR[], alternates VARCHAR[])"
+    },
+    {
+      "column": "version",
+      "data_type": "INTEGER"
+    },
+    {
+      "column": "bbox",
+      "data_type": "STRUCT(xmin DOUBLE, xmax DOUBLE, ymin DOUBLE, ymax DOUBLE)"
+    },
+    {
+      "column": "region",
+      "data_type": "VARCHAR"
+    },
+    {
+      "column": "release",
+      "data_type": "VARCHAR"
+    },
+    {
+      "column": "run",
+      "data_type": "VARCHAR"
+    },
+    {
+      "column": "theme",
+      "data_type": "VARCHAR"
+    },
+    {
+      "column": "type",
+      "data_type": "VARCHAR"
+    }
+  ],
+  "reports": [
+    "column_profile.csv"
+  ],
+  "hash_inputs_requested": false
+}

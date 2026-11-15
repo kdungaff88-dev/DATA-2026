@@ -1,0 +1,22 @@
+column,data_type,row_count,null_count,null_pct,empty_list_count,empty_list_pct,blank_string_count,blank_string_pct
+id,VARCHAR,18560038,0,0.000,,,0,0.000
+geometry,GEOMETRY('OGC:CRS84'),18560038,0,0.000,,,,
+confidence,DOUBLE,18560038,0,0.000,,,,
+websites,VARCHAR[],18560038,4044555,21.792,0,0.000,,
+emails,VARCHAR[],18560038,11975103,64.521,0,0.000,,
+socials,VARCHAR[],18560038,7775499,41.894,0,0.000,,
+phones,VARCHAR[],18560038,2366127,12.749,0,0.000,,
+brand,"STRUCT(wikidata VARCHAR, ""names"" STRUCT(""primary"" VARCHAR, common MAP(VARCHAR, VARCHAR), rules STRUCT(variant VARCHAR, ""language"" VARCHAR, perspectives STRUCT(""mode"" VARCHAR, countries VARCHAR[]), ""value"" VARCHAR, ""between"" DOUBLE[], side VARCHAR)[]))",18560038,8059498,43.424,,,,
+addresses,"STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",18560038,0,0.000,0,0.000,,
+names,"STRUCT(""primary"" VARCHAR, common MAP(VARCHAR, VARCHAR), rules STRUCT(variant VARCHAR, ""language"" VARCHAR, perspectives STRUCT(""mode"" VARCHAR, countries VARCHAR[]), ""value"" VARCHAR, ""between"" DOUBLE[], side VARCHAR)[])",18560038,0,0.000,,,,
+sources,"STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, ""between"" DOUBLE[], provider VARCHAR, ""resource"" VARCHAR, ""version"" VARCHAR)[]",18560038,0,0.000,0,0.000,,
+operating_status,VARCHAR,18560038,4909465,26.452,,,0,0.000
+basic_category,VARCHAR,18560038,766126,4.128,,,0,0.000
+taxonomy,"STRUCT(""primary"" VARCHAR, hierarchy VARCHAR[], alternates VARCHAR[])",18560038,794841,4.283,,,,
+version,INTEGER,18560038,0,0.000,,,,
+bbox,"STRUCT(xmin DOUBLE, xmax DOUBLE, ymin DOUBLE, ymax DOUBLE)",18560038,0,0.000,,,,
+region,VARCHAR,18560038,0,0.000,,,0,0.000
+release,VARCHAR,18560038,0,0.000,,,0,0.000
+run,VARCHAR,18560038,0,0.000,,,0,0.000
+theme,VARCHAR,18560038,0,0.000,,,0,0.000
+type,VARCHAR,18560038,0,0.000,,,0,0.000

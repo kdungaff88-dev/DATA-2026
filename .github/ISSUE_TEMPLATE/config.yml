@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Quy trình dữ liệu và provenance
+    url: https://github.com/kdungaff88-dev/DATA-2026/blob/main/docs/DATA_WORKFLOW.md
+    about: Đọc yêu cầu về nguồn, giấy phép, lưu trữ và khả năng tái lập trước khi đề xuất công việc dữ liệu.

@@ -1,0 +1,11 @@
+{
+  "row_count": 18560038,
+  "null_count": 0,
+  "unparseable_wkb_count": 0,
+  "valid_count": 18560038,
+  "invalid_count": 0,
+  "empty_count": 0,
+  "status": "completed",
+  "method": "Shapely 2.2.0; PyArrow batches of 100,000",
+  "valid_pct_nonnull": "100.000"
+}

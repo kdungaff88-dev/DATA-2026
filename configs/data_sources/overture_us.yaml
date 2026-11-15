@@ -1,0 +1,160 @@
+source_id: overture_us
+provider: Overture Maps Foundation
+
+# `latest` được phân giải thành phiên bản cụ thể và ghi vào manifest mỗi lần chạy.
+release: latest
+release_catalog_url: https://stac.overturemaps.org/catalog.json
+release_url: https://docs.overturemaps.org/getting-data/overturemaps-py/
+retrieved_at_utc: null
+
+region:
+  name: us_census_state_equivalents
+  country: US
+  coverage: "50 bang, Washington, DC và các lãnh thổ được liệt kê trong Census TIGERweb 2025"
+  # Bbox chỉ giảm lượng dữ liệu đọc từ xa; ranh giới Census mới quyết định dữ liệu đầu ra.
+  prefilter_bboxes_wsen:
+    lower_48:
+      - -125.0
+      - 24.0
+      - -66.0
+      - 49.5
+    alaska:
+      - -180.0
+      - 51.0
+      - -129.0
+      - 72.0
+    hawaii:
+      - -161.0
+      - 18.0
+      - -154.0
+      - 23.0
+    puerto_rico_usvi:
+      - -68.5
+      - 17.0
+      - -64.0
+      - 19.5
+    guam_northern_mariana:
+      - 144.0
+      - 13.0
+      - 147.0
+      - 21.0
+    american_samoa:
+      - -172.0
+      - -15.0
+      - -168.0
+      - -10.0
+  boundary:
+    source_id: census_tigerweb_acs2025_us_state
+    edition: 2025
+    url: https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2025/MapServer/80/query
+    documentation_url: https://catalog.data.gov/dataset/tiger-line-shapefile-2025-nation-u-s-state-and-equivalent-entities
+    layer_id: 80
+    boundary_path: data/raw/census/tigerweb=acs2025/us_states.geojson
+    source_crs: EPSG:4326
+    target_crs: EPSG:4326
+    layer_description: "States (or statistically equivalent entities); January 1, 2025 vintage"
+    included_statefp:
+      - "01"
+      - "02"
+      - "04"
+      - "05"
+      - "06"
+      - "08"
+      - "09"
+      - "10"
+      - "11"
+      - "12"
+      - "13"
+      - "15"
+      - "16"
+      - "17"
+      - "18"
+      - "19"
+      - "20"
+      - "21"
+      - "22"
+      - "23"
+      - "24"
+      - "25"
+      - "26"
+      - "27"
+      - "28"
+      - "29"
+      - "30"
+      - "31"
+      - "32"
+      - "33"
+      - "34"
+      - "35"
+      - "36"
+      - "37"
+      - "38"
+      - "39"
+      - "40"
+      - "41"
+      - "42"
+      - "44"
+      - "45"
+      - "46"
+      - "47"
+      - "48"
+      - "49"
+      - "50"
+      - "51"
+      - "53"
+      - "54"
+      - "55"
+      - "56"
+      - "60"
+      - "66"
+      - "69"
+      - "72"
+      - "78"
+
+themes:
+  selected:
+    - places
+  types:
+    addresses: [address]
+    base: [bathymetry, infrastructure, land, land_cover, land_use, water]
+    buildings: [building, building_part]
+    divisions: [division, division_area, division_boundary]
+    places: [place]
+    transportation: [segment, connector]
+
+acquisition:
+  state: ready_not_run
+  method: overturemaps_python_client_geoparquet
+  raw_root: data/raw/overture
+  raw_path_template: data/raw/overture/release={release}/region={region}/run={run_id}/theme={theme}/type={type}/
+  expected_bytes: null
+  checksum: sha256
+  output_format: geoparquet
+
+license_review:
+  state: pending_theme_specific_review
+  common_documentation:
+    - https://docs.overturemaps.org/theme-definitions-table.html
+    - https://docs.overturemaps.org/attribution/
+  documentation_by_theme:
+    addresses: https://docs.overturemaps.org/guides/addresses/
+    base: https://docs.overturemaps.org/guides/base/
+    buildings: https://docs.overturemaps.org/guides/buildings/
+    divisions: https://docs.overturemaps.org/guides/divisions/
+    places: https://docs.overturemaps.org/guides/places/
+    transportation: https://docs.overturemaps.org/guides/transportation/
+  attribution_required: true
+  commercial_redistribution_approved: false
+
+profiling:
+  categories: observed_from_release
+  metrics:
+    - row_count
+    - schema
+    - null_rate
+    - blank_string_rate
+    - empty_list_rate
+    - duplicate_id_rate
+    - geometry_and_address_availability
+    - confidence_distribution
+    - operating_status_distribution

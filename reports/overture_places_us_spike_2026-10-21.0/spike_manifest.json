@@ -1,0 +1,1577 @@
+{
+  "generated_at_utc": "2026-11-15T13:08:09.733387+00:00",
+  "label": "Overture Places US 2026-10-21.0",
+  "input_files": [
+    {
+      "path": "C:/Users/Admin/work/DATA-2026/data/raw/overture/release=2026-10-21.0/region=us-census-state-equivalents/run=20261115T114934.225255Z/theme=places/type=place/place.geoparquet",
+      "bytes": 3950607007
+    }
+  ],
+  "download_run_manifest_path": "data/raw/overture/release=2026-10-21.0/region=us-census-state-equivalents/run=20261115T114934.225255Z/run_manifest.json",
+  "download_run_manifest_sha256": "1cc2946252c4942220a01bf1b38ff759d89459a3c5642fff64d6f298f77976fa",
+  "type_manifest_path": "data/raw/overture/release=2026-10-21.0/region=us-census-state-equivalents/run=20261115T114934.225255Z/theme=places/type=place/manifest.json",
+  "type_manifest_sha256": "e0dd81bdd0e43a58c984b8a093af75857a866f3258e6251a82c707956f3a9c18",
+  "download_provenance": {
+    "status": "completed",
+    "source_id": "overture_us",
+    "requested_release": "2026-10-21.0",
+    "resolved_release": "2026-10-21.0",
+    "selected_themes": [
+      "places"
+    ],
+    "feature_types": [
+      {
+        "theme": "places",
+        "type": "place"
+      }
+    ],
+    "region": "us_census_state_equivalents",
+    "region_coverage": "50 bang, Washington, DC và các lãnh thổ được liệt kê trong Census TIGERweb 2025",
+    "prefilter_bboxes_wsen": [
+      [
+        -125.0,
+        24.0,
+        -66.0,
+        49.5
+      ],
+      [
+        -180.0,
+        51.0,
+        -129.0,
+        72.0
+      ],
+      [
+        -161.0,
+        18.0,
+        -154.0,
+        23.0
+      ],
+      [
+        -68.5,
+        17.0,
+        -64.0,
+        19.5
+      ],
+      [
+        144.0,
+        13.0,
+        147.0,
+        21.0
+      ],
+      [
+        -172.0,
+        -15.0,
+        -168.0,
+        -10.0
+      ]
+    ],
+    "areas": [
+      {
+        "name": "lower_48",
+        "bbox_wsen": [
+          -125.0,
+          24.0,
+          -66.0,
+          49.5
+        ]
+      },
+      {
+        "name": "alaska",
+        "bbox_wsen": [
+          -180.0,
+          51.0,
+          -129.0,
+          72.0
+        ]
+      },
+      {
+        "name": "hawaii",
+        "bbox_wsen": [
+          -161.0,
+          18.0,
+          -154.0,
+          23.0
+        ]
+      },
+      {
+        "name": "puerto_rico_usvi",
+        "bbox_wsen": [
+          -68.5,
+          17.0,
+          -64.0,
+          19.5
+        ]
+      },
+      {
+        "name": "guam_northern_mariana",
+        "bbox_wsen": [
+          144.0,
+          13.0,
+          147.0,
+          21.0
+        ]
+      },
+      {
+        "name": "american_samoa",
+        "bbox_wsen": [
+          -172.0,
+          -15.0,
+          -168.0,
+          -10.0
+        ]
+      }
+    ],
+    "boundary_source_id": "census_tigerweb_acs2025_us_state",
+    "boundary_filter_policy": "geometry_fully_covered_by_union",
+    "size_estimate": {
+      "method": "Tổng file:size STAC của các item giao bbox; đây là ước tính bảo thủ.",
+      "bytes_by_type": {
+        "place": 6110495166
+      },
+      "files_by_type": {
+        "place": 8
+      },
+      "candidate_bytes": 6110495166,
+      "candidate_files": 8,
+      "index_url": "https://stac.overturemaps.org/2026-10-21.0/collections.parquet",
+      "index_bytes_read": 149268
+    },
+    "free_disk_bytes_at_plan": 631819964416,
+    "required_free_disk_bytes": 7688118957,
+    "config_path": "configs/data_sources/overture_us.yaml",
+    "config_sha256": "fea9db3c20cd33ae5ddcb8414036a53a0dcea26b40b8a5affe849f25aca7ad76",
+    "tool_provenance": {
+      "path": "C:/Users/Admin/work/DATA-2026/tools/download_overture_us.py",
+      "version": "0.1.0",
+      "sha256": "76ab26eaa840a187e56f0d8d5b548ed15d506ac05f6c92c5504502dd3b234169"
+    },
+    "started_at_utc": "2026-11-15T11:49:35.480812+00:00",
+    "datasets": [
+      {
+        "status": "completed",
+        "source_id": "overture_us",
+        "provider": "Overture Maps Foundation",
+        "theme": "places",
+        "feature_type": "place",
+        "requested_release": "2026-10-21.0",
+        "resolved_release": "2026-10-21.0",
+        "release_catalog_url": "https://stac.overturemaps.org/catalog.json",
+        "source_data_url": "s3://overturemaps-us-west-2/release/2026-10-21.0/theme=places/type=place/",
+        "documentation_url": "https://docs.overturemaps.org/getting-data/overturemaps-py/",
+        "config_path": "configs/data_sources/overture_us.yaml",
+        "config_sha256": "fea9db3c20cd33ae5ddcb8414036a53a0dcea26b40b8a5affe849f25aca7ad76",
+        "tool_provenance": {
+          "path": "C:/Users/Admin/work/DATA-2026/tools/download_overture_us.py",
+          "version": "0.1.0",
+          "sha256": "76ab26eaa840a187e56f0d8d5b548ed15d506ac05f6c92c5504502dd3b234169"
+        },
+        "boundary_manifest": {
+          "status": "available",
+          "source_id": "census_tigerweb_acs2025_us_state",
+          "provider": "U.S. Census Bureau",
+          "edition": 2025,
+          "layer_id": 80,
+          "source_url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2025/MapServer/80/query",
+          "documentation_url": "https://catalog.data.gov/dataset/tiger-line-shapefile-2025-nation-u-s-state-and-equivalent-entities",
+          "query": {
+            "out_fields": [
+              "GEOID",
+              "NAME",
+              "STUSAB"
+            ],
+            "output_format": "GeoJSON",
+            "output_crs": "EPSG:4326",
+            "included_statefp": [
+              "01",
+              "02",
+              "04",
+              "05",
+              "06",
+              "08",
+              "09",
+              "10",
+              "11",
+              "12",
+              "13",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "53",
+              "54",
+              "55",
+              "56",
+              "60",
+              "66",
+              "69",
+              "72",
+              "78"
+            ]
+          },
+          "retrieved_at_utc": "2026-11-15T11:49:15.755561+00:00",
+          "observed_at_utc": "2026-11-15T11:49:35.947995+00:00",
+          "boundary_path": "data/raw/census/tigerweb=acs2025/us_states.geojson",
+          "feature_count": 56,
+          "bytes": 38177175,
+          "sha256": "4576e828397491111baaf22d472f2557eea31e966b2444f841f8041614d84ca4",
+          "source_crs": "EPSG:4326",
+          "target_crs": "EPSG:4326",
+          "included_statefp": [
+            "01",
+            "02",
+            "04",
+            "05",
+            "06",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "53",
+            "54",
+            "55",
+            "56",
+            "60",
+            "66",
+            "69",
+            "72",
+            "78"
+          ],
+          "license_review_state": "pending_source_terms_review"
+        },
+        "filter_policy": "geometry_fully_covered_by_us_boundary",
+        "prefilter_bboxes_wsen": [
+          [
+            -125.0,
+            24.0,
+            -66.0,
+            49.5
+          ],
+          [
+            -180.0,
+            51.0,
+            -129.0,
+            72.0
+          ],
+          [
+            -161.0,
+            18.0,
+            -154.0,
+            23.0
+          ],
+          [
+            -68.5,
+            17.0,
+            -64.0,
+            19.5
+          ],
+          [
+            144.0,
+            13.0,
+            147.0,
+            21.0
+          ],
+          [
+            -172.0,
+            -15.0,
+            -168.0,
+            -10.0
+          ]
+        ],
+        "areas": [
+          {
+            "name": "lower_48",
+            "bbox_wsen": [
+              -125.0,
+              24.0,
+              -66.0,
+              49.5
+            ]
+          },
+          {
+            "name": "alaska",
+            "bbox_wsen": [
+              -180.0,
+              51.0,
+              -129.0,
+              72.0
+            ]
+          },
+          {
+            "name": "hawaii",
+            "bbox_wsen": [
+              -161.0,
+              18.0,
+              -154.0,
+              23.0
+            ]
+          },
+          {
+            "name": "puerto_rico_usvi",
+            "bbox_wsen": [
+              -68.5,
+              17.0,
+              -64.0,
+              19.5
+            ]
+          },
+          {
+            "name": "guam_northern_mariana",
+            "bbox_wsen": [
+              144.0,
+              13.0,
+              147.0,
+              21.0
+            ]
+          },
+          {
+            "name": "american_samoa",
+            "bbox_wsen": [
+              -172.0,
+              -15.0,
+              -168.0,
+              -10.0
+            ]
+          }
+        ],
+        "region_name": "us_census_state_equivalents",
+        "region_coverage": "50 bang, Washington, DC và các lãnh thổ được liệt kê trong Census TIGERweb 2025",
+        "accessed_at_utc": "2026-11-15T11:49:39.152206+00:00",
+        "overturemaps_client_version": "2.1.1",
+        "license_review_state": "pending_theme_specific_review",
+        "license_documentation": {
+          "common": [
+            "https://docs.overturemaps.org/theme-definitions-table.html",
+            "https://docs.overturemaps.org/attribution/"
+          ],
+          "theme": "https://docs.overturemaps.org/guides/places/"
+        },
+        "commercial_redistribution_approved": false,
+        "attribution_required": true,
+        "candidate_rows": 20571368,
+        "us_rows": 18560038,
+        "excluded_by_boundary_policy": 2011330,
+        "estimated_candidate_bytes": 6110495166,
+        "output_path": "data/raw/overture/release=2026-10-21.0/region=us-census-state-equivalents/run=20261115T114934.225255Z/theme=places/type=place/place.geoparquet",
+        "completed_at_utc": "2026-11-15T12:40:31.767858+00:00",
+        "output_bytes": 3950607007,
+        "sha256": "3bb14b5b1959b2217bc21f44f17a71b93c6b1653f003d86c53216c6658534943",
+        "row_count": 18560038
+      }
+    ],
+    "boundary_manifest": {
+      "status": "available",
+      "source_id": "census_tigerweb_acs2025_us_state",
+      "provider": "U.S. Census Bureau",
+      "edition": 2025,
+      "layer_id": 80,
+      "source_url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2025/MapServer/80/query",
+      "documentation_url": "https://catalog.data.gov/dataset/tiger-line-shapefile-2025-nation-u-s-state-and-equivalent-entities",
+      "query": {
+        "out_fields": [
+          "GEOID",
+          "NAME",
+          "STUSAB"
+        ],
+        "output_format": "GeoJSON",
+        "output_crs": "EPSG:4326",
+        "included_statefp": [
+          "01",
+          "02",
+          "04",
+          "05",
+          "06",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "53",
+          "54",
+          "55",
+          "56",
+          "60",
+          "66",
+          "69",
+          "72",
+          "78"
+        ]
+      },
+      "retrieved_at_utc": "2026-11-15T11:49:15.755561+00:00",
+      "observed_at_utc": "2026-11-15T11:49:35.947995+00:00",
+      "boundary_path": "data/raw/census/tigerweb=acs2025/us_states.geojson",
+      "feature_count": 56,
+      "bytes": 38177175,
+      "sha256": "4576e828397491111baaf22d472f2557eea31e966b2444f841f8041614d84ca4",
+      "source_crs": "EPSG:4326",
+      "target_crs": "EPSG:4326",
+      "included_statefp": [
+        "01",
+        "02",
+        "04",
+        "05",
+        "06",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "53",
+        "54",
+        "55",
+        "56",
+        "60",
+        "66",
+        "69",
+        "72",
+        "78"
+      ],
+      "license_review_state": "pending_source_terms_review"
+    },
+    "completed_at_utc": "2026-11-15T12:40:34.767096+00:00"
+  },
+  "type_provenance": {
+    "status": "completed",
+    "source_id": "overture_us",
+    "provider": "Overture Maps Foundation",
+    "theme": "places",
+    "feature_type": "place",
+    "requested_release": "2026-10-21.0",
+    "resolved_release": "2026-10-21.0",
+    "release_catalog_url": "https://stac.overturemaps.org/catalog.json",
+    "source_data_url": "s3://overturemaps-us-west-2/release/2026-10-21.0/theme=places/type=place/",
+    "documentation_url": "https://docs.overturemaps.org/getting-data/overturemaps-py/",
+    "config_path": "configs/data_sources/overture_us.yaml",
+    "config_sha256": "fea9db3c20cd33ae5ddcb8414036a53a0dcea26b40b8a5affe849f25aca7ad76",
+    "tool_provenance": {
+      "path": "C:/Users/Admin/work/DATA-2026/tools/download_overture_us.py",
+      "version": "0.1.0",
+      "sha256": "76ab26eaa840a187e56f0d8d5b548ed15d506ac05f6c92c5504502dd3b234169"
+    },
+    "boundary_manifest": {
+      "status": "available",
+      "source_id": "census_tigerweb_acs2025_us_state",
+      "provider": "U.S. Census Bureau",
+      "edition": 2025,
+      "layer_id": 80,
+      "source_url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2025/MapServer/80/query",
+      "documentation_url": "https://catalog.data.gov/dataset/tiger-line-shapefile-2025-nation-u-s-state-and-equivalent-entities",
+      "query": {
+        "out_fields": [
+          "GEOID",
+          "NAME",
+          "STUSAB"
+        ],
+        "output_format": "GeoJSON",
+        "output_crs": "EPSG:4326",
+        "included_statefp": [
+          "01",
+          "02",
+          "04",
+          "05",
+          "06",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "53",
+          "54",
+          "55",
+          "56",
+          "60",
+          "66",
+          "69",
+          "72",
+          "78"
+        ]
+      },
+      "retrieved_at_utc": "2026-11-15T11:49:15.755561+00:00",
+      "observed_at_utc": "2026-11-15T11:49:35.947995+00:00",
+      "boundary_path": "data/raw/census/tigerweb=acs2025/us_states.geojson",
+      "feature_count": 56,
+      "bytes": 38177175,
+      "sha256": "4576e828397491111baaf22d472f2557eea31e966b2444f841f8041614d84ca4",
+      "source_crs": "EPSG:4326",
+      "target_crs": "EPSG:4326",
+      "included_statefp": [
+        "01",
+        "02",
+        "04",
+        "05",
+        "06",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "53",
+        "54",
+        "55",
+        "56",
+        "60",
+        "66",
+        "69",
+        "72",
+        "78"
+      ],
+      "license_review_state": "pending_source_terms_review"
+    },
+    "filter_policy": "geometry_fully_covered_by_us_boundary",
+    "prefilter_bboxes_wsen": [
+      [
+        -125.0,
+        24.0,
+        -66.0,
+        49.5
+      ],
+      [
+        -180.0,
+        51.0,
+        -129.0,
+        72.0
+      ],
+      [
+        -161.0,
+        18.0,
+        -154.0,
+        23.0
+      ],
+      [
+        -68.5,
+        17.0,
+        -64.0,
+        19.5
+      ],
+      [
+        144.0,
+        13.0,
+        147.0,
+        21.0
+      ],
+      [
+        -172.0,
+        -15.0,
+        -168.0,
+        -10.0
+      ]
+    ],
+    "areas": [
+      {
+        "name": "lower_48",
+        "bbox_wsen": [
+          -125.0,
+          24.0,
+          -66.0,
+          49.5
+        ]
+      },
+      {
+        "name": "alaska",
+        "bbox_wsen": [
+          -180.0,
+          51.0,
+          -129.0,
+          72.0
+        ]
+      },
+      {
+        "name": "hawaii",
+        "bbox_wsen": [
+          -161.0,
+          18.0,
+          -154.0,
+          23.0
+        ]
+      },
+      {
+        "name": "puerto_rico_usvi",
+        "bbox_wsen": [
+          -68.5,
+          17.0,
+          -64.0,
+          19.5
+        ]
+      },
+      {
+        "name": "guam_northern_mariana",
+        "bbox_wsen": [
+          144.0,
+          13.0,
+          147.0,
+          21.0
+        ]
+      },
+      {
+        "name": "american_samoa",
+        "bbox_wsen": [
+          -172.0,
+          -15.0,
+          -168.0,
+          -10.0
+        ]
+      }
+    ],
+    "region_name": "us_census_state_equivalents",
+    "region_coverage": "50 bang, Washington, DC và các lãnh thổ được liệt kê trong Census TIGERweb 2025",
+    "accessed_at_utc": "2026-11-15T11:49:39.152206+00:00",
+    "overturemaps_client_version": "2.1.1",
+    "license_review_state": "pending_theme_specific_review",
+    "license_documentation": {
+      "common": [
+        "https://docs.overturemaps.org/theme-definitions-table.html",
+        "https://docs.overturemaps.org/attribution/"
+      ],
+      "theme": "https://docs.overturemaps.org/guides/places/"
+    },
+    "commercial_redistribution_approved": false,
+    "attribution_required": true,
+    "candidate_rows": 20571368,
+    "us_rows": 18560038,
+    "excluded_by_boundary_policy": 2011330,
+    "estimated_candidate_bytes": 6110495166,
+    "output_path": "data/raw/overture/release=2026-10-21.0/region=us-census-state-equivalents/run=20261115T114934.225255Z/theme=places/type=place/place.geoparquet",
+    "completed_at_utc": "2026-11-15T12:40:31.767858+00:00",
+    "output_bytes": 3950607007,
+    "sha256": "3bb14b5b1959b2217bc21f44f17a71b93c6b1653f003d86c53216c6658534943",
+    "row_count": 18560038
+  },
+  "profile_manifest": {
+    "generated_at_utc": "2026-11-15T13:03:02.088450+00:00",
+    "tool_version": "0.1.0",
+    "input_label": "Overture Places US 2026-10-21.0",
+    "row_count": 18560038,
+    "input_files": [
+      {
+        "name": "place.geoparquet",
+        "bytes": 3950607007,
+        "sha256": null
+      }
+    ],
+    "schema": [
+      {
+        "column": "id",
+        "data_type": "VARCHAR"
+      },
+      {
+        "column": "geometry",
+        "data_type": "GEOMETRY('OGC:CRS84')"
+      },
+      {
+        "column": "confidence",
+        "data_type": "DOUBLE"
+      },
+      {
+        "column": "websites",
+        "data_type": "VARCHAR[]"
+      },
+      {
+        "column": "emails",
+        "data_type": "VARCHAR[]"
+      },
+      {
+        "column": "socials",
+        "data_type": "VARCHAR[]"
+      },
+      {
+        "column": "phones",
+        "data_type": "VARCHAR[]"
+      },
+      {
+        "column": "brand",
+        "data_type": "STRUCT(wikidata VARCHAR, \"names\" STRUCT(\"primary\" VARCHAR, common MAP(VARCHAR, VARCHAR), rules STRUCT(variant VARCHAR, \"language\" VARCHAR, perspectives STRUCT(\"mode\" VARCHAR, countries VARCHAR[]), \"value\" VARCHAR, \"between\" DOUBLE[], side VARCHAR)[]))"
+      },
+      {
+        "column": "addresses",
+        "data_type": "STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]"
+      },
+      {
+        "column": "names",
+        "data_type": "STRUCT(\"primary\" VARCHAR, common MAP(VARCHAR, VARCHAR), rules STRUCT(variant VARCHAR, \"language\" VARCHAR, perspectives STRUCT(\"mode\" VARCHAR, countries VARCHAR[]), \"value\" VARCHAR, \"between\" DOUBLE[], side VARCHAR)[])"
+      },
+      {
+        "column": "sources",
+        "data_type": "STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, \"between\" DOUBLE[], provider VARCHAR, \"resource\" VARCHAR, \"version\" VARCHAR)[]"
+      },
+      {
+        "column": "operating_status",
+        "data_type": "VARCHAR"
+      },
+      {
+        "column": "basic_category",
+        "data_type": "VARCHAR"
+      },
+      {
+        "column": "taxonomy",
+        "data_type": "STRUCT(\"primary\" VARCHAR, hierarchy VARCHAR[], alternates VARCHAR[])"
+      },
+      {
+        "column": "version",
+        "data_type": "INTEGER"
+      },
+      {
+        "column": "bbox",
+        "data_type": "STRUCT(xmin DOUBLE, xmax DOUBLE, ymin DOUBLE, ymax DOUBLE)"
+      },
+      {
+        "column": "region",
+        "data_type": "VARCHAR"
+      },
+      {
+        "column": "release",
+        "data_type": "VARCHAR"
+      },
+      {
+        "column": "run",
+        "data_type": "VARCHAR"
+      },
+      {
+        "column": "theme",
+        "data_type": "VARCHAR"
+      },
+      {
+        "column": "type",
+        "data_type": "VARCHAR"
+      }
+    ],
+    "reports": [
+      "column_profile.csv"
+    ],
+    "hash_inputs_requested": false
+  },
+  "profile_metrics": {
+    "row_count": 18560038,
+    "column_count": 21,
+    "distinct_id_count": 18560038,
+    "null_id_count": 0,
+    "duplicate_id_rows": 0,
+    "confidence_avg": 0.7993389040915048,
+    "confidence_min": 0.0,
+    "confidence_median": 0.9199122190475464,
+    "confidence_max": 1.0,
+    "confidence_distribution": [
+      {
+        "range": "< 0.50",
+        "row_count": 2172638,
+        "share_of_dataset_pct": "11.706"
+      },
+      {
+        "range": "[0.50, 0.75)",
+        "row_count": 2694010,
+        "share_of_dataset_pct": "14.515"
+      },
+      {
+        "range": "[0.75, 0.90)",
+        "row_count": 2666627,
+        "share_of_dataset_pct": "14.368"
+      },
+      {
+        "range": "[0.90, 0.95)",
+        "row_count": 6613839,
+        "share_of_dataset_pct": "35.635"
+      },
+      {
+        "range": "[0.95, 1.00]",
+        "row_count": 4412924,
+        "share_of_dataset_pct": "23.776"
+      },
+      {
+        "range": "NULL",
+        "row_count": 0,
+        "share_of_dataset_pct": "0.000"
+      }
+    ],
+    "field_availability": [
+      {
+        "field": "id",
+        "source_path": "id",
+        "data_type": "VARCHAR",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Chuỗi không null và không rỗng sau TRIM."
+      },
+      {
+        "field": "geometry",
+        "source_path": "geometry",
+        "data_type": "GEOMETRY('OGC:CRS84')",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Giá trị không null."
+      },
+      {
+        "field": "name_primary",
+        "source_path": "names.primary",
+        "data_type": "VARCHAR",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Chuỗi không null và không rỗng sau TRIM."
+      },
+      {
+        "field": "category_primary",
+        "source_path": "taxonomy.primary",
+        "data_type": "VARCHAR",
+        "available_count": 17765197,
+        "available_pct": "95.717",
+        "definition": "Chuỗi không null và không rỗng sau TRIM."
+      },
+      {
+        "field": "category_alternates",
+        "source_path": "taxonomy.alternates",
+        "data_type": "VARCHAR[]",
+        "available_count": 46985,
+        "available_pct": "0.253",
+        "definition": "List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB."
+      },
+      {
+        "field": "taxonomy_hierarchy",
+        "source_path": "taxonomy.hierarchy",
+        "data_type": "VARCHAR[]",
+        "available_count": 17765197,
+        "available_pct": "95.717",
+        "definition": "List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB."
+      },
+      {
+        "field": "basic_category",
+        "source_path": "basic_category",
+        "data_type": "VARCHAR",
+        "available_count": 17793912,
+        "available_pct": "95.872",
+        "definition": "Chuỗi không null và không rỗng sau TRIM."
+      },
+      {
+        "field": "addresses",
+        "source_path": "addresses",
+        "data_type": "STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "List không null và có ít nhất một phần tử."
+      },
+      {
+        "field": "websites",
+        "source_path": "websites",
+        "data_type": "VARCHAR[]",
+        "available_count": 14138137,
+        "available_pct": "76.175",
+        "definition": "List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB."
+      },
+      {
+        "field": "phones",
+        "source_path": "phones",
+        "data_type": "VARCHAR[]",
+        "available_count": 16171781,
+        "available_pct": "87.132",
+        "definition": "List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB."
+      },
+      {
+        "field": "emails",
+        "source_path": "emails",
+        "data_type": "VARCHAR[]",
+        "available_count": 6584925,
+        "available_pct": "35.479",
+        "definition": "List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB."
+      },
+      {
+        "field": "socials",
+        "source_path": "socials",
+        "data_type": "VARCHAR[]",
+        "available_count": 10784539,
+        "available_pct": "58.106",
+        "definition": "List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB."
+      },
+      {
+        "field": "confidence",
+        "source_path": "confidence",
+        "data_type": "DOUBLE",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Giá trị không null."
+      },
+      {
+        "field": "operating_status",
+        "source_path": "operating_status",
+        "data_type": "VARCHAR",
+        "available_count": 13650573,
+        "available_pct": "73.548",
+        "definition": "Chuỗi không null và không rỗng sau TRIM."
+      },
+      {
+        "field": "sources",
+        "source_path": "sources",
+        "data_type": "STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, \"between\" DOUBLE[], provider VARCHAR, \"resource\" VARCHAR, \"version\" VARCHAR)[]",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "List không null và có ít nhất một phần tử."
+      },
+      {
+        "field": "brand",
+        "source_path": "brand",
+        "data_type": "STRUCT(wikidata VARCHAR, \"names\" STRUCT(\"primary\" VARCHAR, common MAP(VARCHAR, VARCHAR), rules STRUCT(variant VARCHAR, \"language\" VARCHAR, perspectives STRUCT(\"mode\" VARCHAR, countries VARCHAR[]), \"value\" VARCHAR, \"between\" DOUBLE[], side VARCHAR)[]))",
+        "available_count": 10500540,
+        "available_pct": "56.576",
+        "definition": "Giá trị không null."
+      },
+      {
+        "field": "brand_name_primary",
+        "source_path": "brand.names.primary",
+        "data_type": "VARCHAR",
+        "available_count": 1651662,
+        "available_pct": "8.899",
+        "definition": "Chuỗi không null và không rỗng sau TRIM."
+      },
+      {
+        "field": "address_freeform",
+        "source_path": "addresses[*].freeform",
+        "data_type": "STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",
+        "available_count": 17865547,
+        "available_pct": "96.258",
+        "definition": "Ít nhất một phần tử có freeform không null và không trắng."
+      },
+      {
+        "field": "address_locality",
+        "source_path": "addresses[*].locality",
+        "data_type": "STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",
+        "available_count": 18501443,
+        "available_pct": "99.684",
+        "definition": "Ít nhất một phần tử có locality không null và không trắng."
+      },
+      {
+        "field": "address_postcode",
+        "source_path": "addresses[*].postcode",
+        "data_type": "STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",
+        "available_count": 17962192,
+        "available_pct": "96.779",
+        "definition": "Ít nhất một phần tử có postcode không null và không trắng."
+      },
+      {
+        "field": "address_region",
+        "source_path": "addresses[*].region",
+        "data_type": "STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",
+        "available_count": 18312206,
+        "available_pct": "98.665",
+        "definition": "Ít nhất một phần tử có region không null và không trắng."
+      },
+      {
+        "field": "address_country",
+        "source_path": "addresses[*].country",
+        "data_type": "STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",
+        "available_count": 18559901,
+        "available_pct": "99.999",
+        "definition": "Ít nhất một phần tử có country không null và không trắng."
+      },
+      {
+        "field": "source_dataset",
+        "source_path": "sources[*].dataset",
+        "data_type": "STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, \"between\" DOUBLE[], provider VARCHAR, \"resource\" VARCHAR, \"version\" VARCHAR)[]",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Ít nhất một phần tử có dataset không null và không trắng."
+      },
+      {
+        "field": "source_license",
+        "source_path": "sources[*].license",
+        "data_type": "STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, \"between\" DOUBLE[], provider VARCHAR, \"resource\" VARCHAR, \"version\" VARCHAR)[]",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Ít nhất một phần tử có license không null và không trắng."
+      },
+      {
+        "field": "source_provider",
+        "source_path": "sources[*].provider",
+        "data_type": "STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, \"between\" DOUBLE[], provider VARCHAR, \"resource\" VARCHAR, \"version\" VARCHAR)[]",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Ít nhất một phần tử có provider không null và không trắng."
+      },
+      {
+        "field": "source_record_id",
+        "source_path": "sources[*].record_id",
+        "data_type": "STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, \"between\" DOUBLE[], provider VARCHAR, \"resource\" VARCHAR, \"version\" VARCHAR)[]",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Ít nhất một phần tử có record_id không null và không trắng."
+      },
+      {
+        "field": "source_update_time",
+        "source_path": "sources[*].update_time",
+        "data_type": "STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, \"between\" DOUBLE[], provider VARCHAR, \"resource\" VARCHAR, \"version\" VARCHAR)[]",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Ít nhất một phần tử có update_time không null và không trắng."
+      },
+      {
+        "field": "source_confidence",
+        "source_path": "sources[*].confidence",
+        "data_type": "STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, \"between\" DOUBLE[], provider VARCHAR, \"resource\" VARCHAR, \"version\" VARCHAR)[]",
+        "available_count": 18560038,
+        "available_pct": "100.000",
+        "definition": "Ít nhất một phần tử có confidence không null."
+      }
+    ],
+    "category_top_20": [
+      {
+        "category_primary": "(không có category chính)",
+        "row_count": 794841,
+        "share_of_dataset_pct": "4.283",
+        "addresses_available_count": 794841,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 456319,
+        "websites_available_pct": "57.410",
+        "phones_available_count": 701906,
+        "phones_available_pct": "88.308",
+        "emails_available_count": 125091,
+        "emails_available_pct": "15.738",
+        "confidence_available_count": 794841,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "real_estate_agent",
+        "row_count": 412399,
+        "share_of_dataset_pct": "2.222",
+        "addresses_available_count": 412399,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 360370,
+        "websites_available_pct": "87.384",
+        "phones_available_count": 403649,
+        "phones_available_pct": "97.878",
+        "emails_available_count": 255263,
+        "emails_available_pct": "61.897",
+        "confidence_available_count": 412399,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "christian_place_of_worship",
+        "row_count": 346777,
+        "share_of_dataset_pct": "1.868",
+        "addresses_available_count": 346777,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 257160,
+        "websites_available_pct": "74.157",
+        "phones_available_count": 306132,
+        "phones_available_pct": "88.279",
+        "emails_available_count": 200402,
+        "emails_available_pct": "57.790",
+        "confidence_available_count": 346777,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "health_care",
+        "row_count": 304902,
+        "share_of_dataset_pct": "1.643",
+        "addresses_available_count": 304902,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 112351,
+        "websites_available_pct": "36.848",
+        "phones_available_count": 89127,
+        "phones_available_pct": "29.231",
+        "emails_available_count": 13774,
+        "emails_available_pct": "4.518",
+        "confidence_available_count": 304902,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "real_estate_service",
+        "row_count": 238333,
+        "share_of_dataset_pct": "1.284",
+        "addresses_available_count": 238333,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 156991,
+        "websites_available_pct": "65.870",
+        "phones_available_count": 142431,
+        "phones_available_pct": "59.761",
+        "emails_available_count": 84538,
+        "emails_available_pct": "35.471",
+        "confidence_available_count": 238333,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "insurance_agency",
+        "row_count": 235802,
+        "share_of_dataset_pct": "1.270",
+        "addresses_available_count": 235802,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 186620,
+        "websites_available_pct": "79.143",
+        "phones_available_count": 175990,
+        "phones_available_pct": "74.635",
+        "emails_available_count": 92466,
+        "emails_available_pct": "39.213",
+        "confidence_available_count": 235802,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "automotive_repair",
+        "row_count": 219708,
+        "share_of_dataset_pct": "1.184",
+        "addresses_available_count": 219708,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 143720,
+        "websites_available_pct": "65.414",
+        "phones_available_count": 208507,
+        "phones_available_pct": "94.902",
+        "emails_available_count": 107650,
+        "emails_available_pct": "48.997",
+        "confidence_available_count": 219708,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "social_or_community_service",
+        "row_count": 207284,
+        "share_of_dataset_pct": "1.117",
+        "addresses_available_count": 207284,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 175100,
+        "websites_available_pct": "84.473",
+        "phones_available_count": 175101,
+        "phones_available_pct": "84.474",
+        "emails_available_count": 142313,
+        "emails_available_pct": "68.656",
+        "confidence_available_count": 207284,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "beauty_salon",
+        "row_count": 205391,
+        "share_of_dataset_pct": "1.107",
+        "addresses_available_count": 205391,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 129304,
+        "websites_available_pct": "62.955",
+        "phones_available_count": 187648,
+        "phones_available_pct": "91.361",
+        "emails_available_count": 101435,
+        "emails_available_pct": "49.386",
+        "confidence_available_count": 205391,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "contractor",
+        "row_count": 202118,
+        "share_of_dataset_pct": "1.089",
+        "addresses_available_count": 202118,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 154407,
+        "websites_available_pct": "76.394",
+        "phones_available_count": 173578,
+        "phones_available_pct": "85.880",
+        "emails_available_count": 85573,
+        "emails_available_pct": "42.338",
+        "confidence_available_count": 202118,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "historic_site",
+        "row_count": 185781,
+        "share_of_dataset_pct": "1.001",
+        "addresses_available_count": 185781,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 127002,
+        "websites_available_pct": "68.361",
+        "phones_available_count": 133886,
+        "phones_available_pct": "72.067",
+        "emails_available_count": 81312,
+        "emails_available_pct": "43.768",
+        "confidence_available_count": 185781,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "hair_salon",
+        "row_count": 182242,
+        "share_of_dataset_pct": "0.982",
+        "addresses_available_count": 182242,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 138160,
+        "websites_available_pct": "75.811",
+        "phones_available_count": 176559,
+        "phones_available_pct": "96.882",
+        "emails_available_count": 87562,
+        "emails_available_pct": "48.047",
+        "confidence_available_count": 182242,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "restaurant",
+        "row_count": 179613,
+        "share_of_dataset_pct": "0.968",
+        "addresses_available_count": 179613,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 86916,
+        "websites_available_pct": "48.391",
+        "phones_available_count": 102632,
+        "phones_available_pct": "57.141",
+        "emails_available_count": 26761,
+        "emails_available_pct": "14.899",
+        "confidence_available_count": 179613,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "professional_service",
+        "row_count": 167272,
+        "share_of_dataset_pct": "0.901",
+        "addresses_available_count": 167272,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 132773,
+        "websites_available_pct": "79.376",
+        "phones_available_count": 155091,
+        "phones_available_pct": "92.718",
+        "emails_available_count": 102715,
+        "emails_available_pct": "61.406",
+        "confidence_available_count": 167272,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "park",
+        "row_count": 164327,
+        "share_of_dataset_pct": "0.885",
+        "addresses_available_count": 164327,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 86745,
+        "websites_available_pct": "52.788",
+        "phones_available_count": 77296,
+        "phones_available_pct": "47.038",
+        "emails_available_count": 14730,
+        "emails_available_pct": "8.964",
+        "confidence_available_count": 164327,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "doctors_office",
+        "row_count": 156438,
+        "share_of_dataset_pct": "0.843",
+        "addresses_available_count": 156438,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 129670,
+        "websites_available_pct": "82.889",
+        "phones_available_count": 152904,
+        "phones_available_pct": "97.741",
+        "emails_available_count": 18591,
+        "emails_available_pct": "11.884",
+        "confidence_available_count": 156438,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "gas_station",
+        "row_count": 154420,
+        "share_of_dataset_pct": "0.832",
+        "addresses_available_count": 154420,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 126765,
+        "websites_available_pct": "82.091",
+        "phones_available_count": 122281,
+        "phones_available_pct": "79.187",
+        "emails_available_count": 28724,
+        "emails_available_pct": "18.601",
+        "confidence_available_count": 154420,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "financial_service",
+        "row_count": 146402,
+        "share_of_dataset_pct": "0.789",
+        "addresses_available_count": 146402,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 111176,
+        "websites_available_pct": "75.939",
+        "phones_available_count": 99193,
+        "phones_available_pct": "67.754",
+        "emails_available_count": 34801,
+        "emails_available_pct": "23.771",
+        "confidence_available_count": 146402,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "money_transfer_service",
+        "row_count": 139118,
+        "share_of_dataset_pct": "0.750",
+        "addresses_available_count": 139118,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 135413,
+        "websites_available_pct": "97.337",
+        "phones_available_count": 104568,
+        "phones_available_pct": "75.165",
+        "emails_available_count": 0,
+        "emails_available_pct": "0.000",
+        "confidence_available_count": 139118,
+        "confidence_available_pct": "100.000"
+      },
+      {
+        "category_primary": "atm",
+        "row_count": 135932,
+        "share_of_dataset_pct": "0.732",
+        "addresses_available_count": 135932,
+        "addresses_available_pct": "100.000",
+        "websites_available_count": 103742,
+        "websites_available_pct": "76.319",
+        "phones_available_count": 101389,
+        "phones_available_pct": "74.588",
+        "emails_available_count": 11177,
+        "emails_available_pct": "8.222",
+        "confidence_available_count": 135932,
+        "confidence_available_pct": "100.000"
+      }
+    ],
+    "operating_status": [
+      {
+        "operating_status": "open",
+        "row_count": 13012346,
+        "share_of_dataset_pct": "70.109"
+      },
+      {
+        "operating_status": "(null)",
+        "row_count": 4909465,
+        "share_of_dataset_pct": "26.452"
+      },
+      {
+        "operating_status": "permanently_closed",
+        "row_count": 638054,
+        "share_of_dataset_pct": "3.438"
+      },
+      {
+        "operating_status": "temporarily_closed",
+        "row_count": 173,
+        "share_of_dataset_pct": "0.001"
+      }
+    ],
+    "geometry": {
+      "row_count": 18560038,
+      "null_count": 0,
+      "unparseable_wkb_count": 0,
+      "valid_count": 18560038,
+      "invalid_count": 0,
+      "empty_count": 0,
+      "status": "completed",
+      "method": "Shapely 2.2.0; PyArrow batches of 100,000",
+      "valid_pct_nonnull": "100.000"
+    }
+  },
+  "environment": {
+    "python_version": "3.14.2",
+    "duckdb_version": "2.0.0",
+    "pyarrow_version": "26.0.1",
+    "overturemaps_version": "2.1.1",
+    "shapely_version": "2.2.0",
+    "report_tool_path": "C:/Users/Admin/work/DATA-2026/tools/report_overture_places_spike.py",
+    "report_tool_sha256": "39a80ef770504de8d1b1110ba268a64b8a6ae39c4af268ba30f2ab920d84f976",
+    "profile_tool_path": "C:/Users/Admin/work/DATA-2026/tools/profile_parquet.py",
+    "profile_tool_sha256": "1031045a544a71a1030e949d787669be178648114494938c5f4e9e728dce87ac",
+    "requirements_sha256": "978838764323691da19bbafd12b03913cdb3973c1e20423b50d8737697bde27b"
+  },
+  "commercial_redistribution_approved": false,
+  "buyer_demand_validated": false
+}

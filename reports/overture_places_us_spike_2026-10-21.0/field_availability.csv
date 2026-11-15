@@ -1,0 +1,29 @@
+﻿field,source_path,data_type,available_count,available_pct,definition
+id,id,VARCHAR,18560038,100.000,Chuỗi không null và không rỗng sau TRIM.
+geometry,geometry,GEOMETRY('OGC:CRS84'),18560038,100.000,Giá trị không null.
+name_primary,names.primary,VARCHAR,18560038,100.000,Chuỗi không null và không rỗng sau TRIM.
+category_primary,taxonomy.primary,VARCHAR,17765197,95.717,Chuỗi không null và không rỗng sau TRIM.
+category_alternates,taxonomy.alternates,VARCHAR[],46985,0.253,List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB.
+taxonomy_hierarchy,taxonomy.hierarchy,VARCHAR[],17765197,95.717,List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB.
+basic_category,basic_category,VARCHAR,17793912,95.872,Chuỗi không null và không rỗng sau TRIM.
+addresses,addresses,"STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",18560038,100.000,List không null và có ít nhất một phần tử.
+websites,websites,VARCHAR[],14138137,76.175,List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB.
+phones,phones,VARCHAR[],16171781,87.132,List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB.
+emails,emails,VARCHAR[],6584925,35.479,List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB.
+socials,socials,VARCHAR[],10784539,58.106,List có ít nhất một chuỗi không null và không trắng; lọc phần tử trong DuckDB.
+confidence,confidence,DOUBLE,18560038,100.000,Giá trị không null.
+operating_status,operating_status,VARCHAR,13650573,73.548,Chuỗi không null và không rỗng sau TRIM.
+sources,sources,"STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, ""between"" DOUBLE[], provider VARCHAR, ""resource"" VARCHAR, ""version"" VARCHAR)[]",18560038,100.000,List không null và có ít nhất một phần tử.
+brand,brand,"STRUCT(wikidata VARCHAR, ""names"" STRUCT(""primary"" VARCHAR, common MAP(VARCHAR, VARCHAR), rules STRUCT(variant VARCHAR, ""language"" VARCHAR, perspectives STRUCT(""mode"" VARCHAR, countries VARCHAR[]), ""value"" VARCHAR, ""between"" DOUBLE[], side VARCHAR)[]))",10500540,56.576,Giá trị không null.
+brand_name_primary,brand.names.primary,VARCHAR,1651662,8.899,Chuỗi không null và không rỗng sau TRIM.
+address_freeform,addresses[*].freeform,"STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",17865547,96.258,Ít nhất một phần tử có freeform không null và không trắng.
+address_locality,addresses[*].locality,"STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",18501443,99.684,Ít nhất một phần tử có locality không null và không trắng.
+address_postcode,addresses[*].postcode,"STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",17962192,96.779,Ít nhất một phần tử có postcode không null và không trắng.
+address_region,addresses[*].region,"STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",18312206,98.665,Ít nhất một phần tử có region không null và không trắng.
+address_country,addresses[*].country,"STRUCT(freeform VARCHAR, locality VARCHAR, postcode VARCHAR, region VARCHAR, country VARCHAR)[]",18559901,99.999,Ít nhất một phần tử có country không null và không trắng.
+source_dataset,sources[*].dataset,"STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, ""between"" DOUBLE[], provider VARCHAR, ""resource"" VARCHAR, ""version"" VARCHAR)[]",18560038,100.000,Ít nhất một phần tử có dataset không null và không trắng.
+source_license,sources[*].license,"STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, ""between"" DOUBLE[], provider VARCHAR, ""resource"" VARCHAR, ""version"" VARCHAR)[]",18560038,100.000,Ít nhất một phần tử có license không null và không trắng.
+source_provider,sources[*].provider,"STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, ""between"" DOUBLE[], provider VARCHAR, ""resource"" VARCHAR, ""version"" VARCHAR)[]",18560038,100.000,Ít nhất một phần tử có provider không null và không trắng.
+source_record_id,sources[*].record_id,"STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, ""between"" DOUBLE[], provider VARCHAR, ""resource"" VARCHAR, ""version"" VARCHAR)[]",18560038,100.000,Ít nhất một phần tử có record_id không null và không trắng.
+source_update_time,sources[*].update_time,"STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, ""between"" DOUBLE[], provider VARCHAR, ""resource"" VARCHAR, ""version"" VARCHAR)[]",18560038,100.000,Ít nhất một phần tử có update_time không null và không trắng.
+source_confidence,sources[*].confidence,"STRUCT(property VARCHAR, dataset VARCHAR, license VARCHAR, record_id VARCHAR, update_time VARCHAR, confidence DOUBLE, ""between"" DOUBLE[], provider VARCHAR, ""resource"" VARCHAR, ""version"" VARCHAR)[]",18560038,100.000,Ít nhất một phần tử có confidence không null.

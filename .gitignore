@@ -1,0 +1,23 @@
+# Local data snapshots are not source-code artifacts; keep them out of Git.
+/data/raw/*
+!/data/raw/.gitkeep
+/data/staging/*
+!/data/staging/.gitkeep
+/data/normalized/*
+!/data/normalized/.gitkeep
+/data/curated/*
+!/data/curated/.gitkeep
+
+# Local analysis state and Python artifacts.
+*.duckdb
+*.duckdb.wal
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Secrets and local machine configuration.
+.env
+.env.*
+!.env.example

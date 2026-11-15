@@ -1,0 +1,44 @@
+name: Đề xuất nguồn dữ liệu
+description: Đề xuất nguồn để đánh giá; biểu mẫu này không cho phép tải dữ liệu.
+title: "[Nguồn dữ liệu]: "
+body:
+  - type: input
+    id: source
+    attributes:
+      label: URL chính thức và chủ sở hữu nguồn
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Mục đích sử dụng và vấn đề của người mua
+    validations:
+      required: true
+  - type: textarea
+    id: rights
+    attributes:
+      label: Giấy phép, điều khoản, ghi công và tái phân phối
+      description: Đính kèm điều khoản chính thức; ghi rõ nội dung chưa xác minh.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Phạm vi, schema và dung lượng dự kiến
+      description: Ghi khu vực, chu kỳ cập nhật và dung lượng lưu trữ cục bộ ước tính.
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Đánh giá PII và dữ liệu nhạy cảm
+      description: Liệt kê trường dữ liệu cá nhân hoặc ghi "chưa đánh giá".
+    validations:
+      required: true
+  - type: checkboxes
+    id: approval
+    attributes:
+      label: Điều kiện trước khi thu thập
+      options:
+        - label: Tôi hiểu rằng đề xuất này không cho phép truy cập mạng hoặc tải dữ liệu.
+          required: true
