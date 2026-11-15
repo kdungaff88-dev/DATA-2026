@@ -1,6 +1,6 @@
 # Đặc tả Top 3 sản phẩm — Gumroad và Apify
 
-Ngày cập nhật: 2026-11-15  
+Ngày cập nhật: 2026-11-15
 Trạng thái: Đặc tả thử nghiệm; chưa phê duyệt phát hành hay bán dữ liệu nguồn.
 
 ## 1. Quyết định và phạm vi

@@ -165,15 +165,15 @@ def _stacked_bar(rows: list[dict[str, str]]) -> str:
         "(null)": "#c5c8bf",
     }
     labels = {
-        "open": "Đang mở theo dữ liệu",
+        "open": "Đang mở theo dữ liệu nguồn",
         "permanently_closed": "Đóng cửa vĩnh viễn",
         "temporarily_closed": "Đóng cửa tạm thời",
         "(null)": "Thiếu trạng thái",
     }
     x, y, width, height = 12, 20, 896, 28
     parts = [
-        f'<svg class="chart-svg" viewBox="0 0 940 100" role="img" '
-        'aria-label="Tỷ trọng operating status">',
+        '<svg class="chart-svg" viewBox="0 0 940 100" role="img" '
+        'aria-label="Tỷ trọng trạng thái hoạt động">',
         f'<rect x="{x}" y="{y}" width="{width}" height="{height}" rx="14" fill="#e8e5da"/>',
     ]
     position = x
@@ -270,7 +270,7 @@ def _candidate_table(
         )
     return (
         '<div class="table-scroll"><table>'
-        "<thead><tr><th>Category ứng viên</th><th>Số dòng</th><th>Tỷ trọng</th>"
+        "<thead><tr><th>Danh mục</th><th>Số dòng</th><th>Tỷ trọng</th>"
         "<th>Website</th><th>Phone</th><th>Email</th></tr></thead>"
         "<tbody>" + "".join(body) + "</tbody></table></div>"
     )
@@ -292,7 +292,7 @@ def _license_table(rows: list[dict[str, Any]]) -> str:
     return (
         '<div class="table-scroll"><table>'
         "<thead><tr><th>License quan sát được</th><th>Nhóm scope</th>"
-        "<th>Source-item entries*</th><th>Provider</th></tr></thead>"
+        "<th>Số mục nguồn*</th><th>Provider</th></tr></thead>"
         "<tbody>" + "".join(body) + "</tbody></table></div>"
     )
 
@@ -385,20 +385,6 @@ def _render_html(report_dir: Path) -> str:
         key=lambda row: _integer(row["row_count"]), reverse=True
     )
 
-    license_bar_rows = []
-    for row in license_chart_rows:
-        license_name = row[0]
-        color = LICENSE_COLORS.get(license_name, "#547ba4")
-        license_bar_rows.append((row[0], row[1], row[2]))
-    license_chart = _bar_chart(
-        license_bar_rows,
-        value_max=license_max,
-        label_width=270,
-        bar_width=500,
-        row_height=40,
-        color="#547ba4",
-    )
-
     kpis = [
         ("18.56M", "địa điểm sau lọc", "row count"),
         (_fmt_pct(available["websites"]["available_pct"]), "có website", "có ít nhất một giá trị"),
@@ -426,7 +412,7 @@ def _render_html(report_dir: Path) -> str:
             "</tr>"
         )
     top_table = (
-        '<div class="table-scroll"><table><thead><tr><th>Category</th><th>Số dòng</th>'
+        '<div class="table-scroll"><table><thead><tr><th>Danh mục</th><th>Số dòng</th>'
         "<th>Tỷ trọng</th><th>Website</th><th>Phone</th><th>Email</th></tr></thead>"
         "<tbody>" + "".join(top_table_rows) + "</tbody></table></div>"
     )
@@ -610,10 +596,10 @@ def _render_html(report_dir: Path) -> str:
 
   <section class="verdict">
     <div><h2>Kết luận điều hành</h2><p>Snapshot đủ lớn và có độ phủ phone/website cao ở một số category, nhưng độ phủ khác nhau đáng kể theo ngành. Đây là tín hiệu để chọn câu hỏi nghiên cứu, chưa phải bằng chứng buyer demand, độ chính xác hay quyền bán lại.</p></div>
-    <div class="verdict-mark"><strong>Quyết định hiện tại</strong><span>Không build/listing dataset thật. Tiếp tục pain-point discovery bằng dữ liệu tổng hợp và mockup không chứa record nguồn.</span></div>
+    <div class="verdict-mark"><strong>Quyết định hiện tại</strong><span>Đã chọn Top 3 để thiết kế. Chưa phát hành record nguồn; tiếp tục rà quyền và kiểm chứng buyer bằng mockup không chứa record nguồn.</span></div>
   </section>
 
-  <div class="section-head"><div><div class="section-kicker">01 / Field coverage</div><h2>Trường nào đủ dùng để thử giả thuyết?</h2></div><div class="section-note">Mẫu số là 18,560,038 feature. List chỉ tính có ít nhất một phần tử hữu dụng; đây không phải phép đo tính đúng, mới hay liên hệ được.</div></div>
+  <div class="section-head"><div><div class="section-kicker">01 / Độ sẵn có trường</div><h2>Trường nào đủ dùng để thử giả thuyết?</h2></div><div class="section-note">Mẫu số là 18,560,038 feature. List chỉ tính có ít nhất một phần tử hữu dụng; đây không phải phép đo tính đúng, mới hay liên hệ được.</div></div>
   <div class="grid-2">
     <article class="panel"><h3>Độ sẵn có theo trường</h3><p>Địa chỉ và taxonomy tương đối đầy; email là trường yếu nhất trong nhóm liên hệ.</p>{_bar_chart(field_chart_rows, value_max=100, label_width=220, bar_width=500, row_height=32)}</article>
     <article class="panel"><h3>Độ phủ không đồng đều</h3><p>Chênh lệch theo category quyết định loại lời hứa nào có thể thử — không nên hứa một mức coverage chung.</p>
@@ -622,26 +608,27 @@ def _render_html(report_dir: Path) -> str:
     </article>
   </div>
 
-  <div class="section-head"><div><div class="section-kicker">02 / Category screen</div><h2>Quy mô lớn không đồng nghĩa niche tốt</h2></div><div class="section-note">Category là taxonomy nguồn, không phải phân khúc buyer đã được kiểm chứng. Các nhóm chỉ dùng để sàng lọc ban đầu.</div></div>
+  <div class="section-head"><div><div class="section-kicker">02 / Sàng lọc danh mục</div><h2>Quy mô lớn không đồng nghĩa niche tốt</h2></div><div class="section-note">Category là taxonomy nguồn, không phải phân khúc buyer đã được kiểm chứng. Các nhóm chỉ dùng để sàng lọc ban đầu.</div></div>
   <div class="grid-2">
     <article class="panel"><h3>12 nhóm có nhiều dòng nhất</h3><p>Cả nhóm thiếu category chính cũng được giữ để không che mất phần chưa phân loại.</p>{_bar_chart(category_chart_rows, value_max=max(row[1] for row in category_chart_rows), value_suffix="", label_width=250, bar_width=500, row_height=31, color="#db633e")}</article>
-    <article class="panel"><h3>Ứng viên để kiểm chứng — chưa xếp hạng</h3><p>Chọn theo khả năng phân tích dữ liệu (volume + contact fields) בלבד; pain point, cạnh tranh, quyền enrichment và willingness-to-pay còn chưa biết.</p>{candidate_rows}<div class="callout">Không chọn niche chỉ từ bảng này. Cần nguồn pain point lặp lại, ít nhất một tín hiệu trả tiền và xác nhận quyền nguồn.</div></article>
+    <article class="panel"><h3>Danh mục kỹ thuật để sàng lọc — chưa xếp hạng sản phẩm</h3><p>Bảng chọn theo quy mô và độ sẵn có trường liên hệ; nó không phải danh sách Top 3 sản phẩm. Nỗi đau buyer, cạnh tranh, quyền enrichment và mức sẵn sàng trả tiền còn cần kiểm chứng.</p>{candidate_rows}<div class="callout">Không chọn sản phẩm chỉ từ coverage. Top 3 hiện tại là license HVAC/điện, CRM company hygiene và website coverage; xem <a href="PRODUCT_DESIGN_TOP3.md">đặc tả sản phẩm</a>.</div></article>
   </div>
 
   <article class="panel" style="margin-top:18px"><h3>Heatmap liên hệ theo 12 category đầu</h3><p>Màu xanh hơn = tỷ lệ có ít nhất một giá trị cao hơn. Giá trị vẫn cần được kiểm tra chất lượng ngoài thực địa.</p>{_heatmap_table(top_candidate_heat)}</article>
+  <article class="panel" style="margin-top:18px"><h3>Chi tiết 12 danh mục dẫn đầu</h3><p>Bảng cho biết quy mô và độ sẵn có website/phone/email; tỷ lệ này không đo độ chính xác hoặc nhu cầu mua.</p>{top_table}</article>
 
-  <div class="section-head"><div><div class="section-kicker">03 / Reliability signals</div><h2>Trạng thái và confidence cần đọc đúng nghĩa</h2></div><div class="section-note">Confidence là điểm do nguồn cung cấp; không diễn giải như xác suất đúng đã được hiệu chuẩn.</div></div>
+  <div class="section-head"><div><div class="section-kicker">03 / Tín hiệu chất lượng</div><h2>Trạng thái và confidence cần đọc đúng nghĩa</h2></div><div class="section-note">Confidence là điểm do nguồn cung cấp; không diễn giải như xác suất đúng đã được hiệu chuẩn.</div></div>
   <div class="grid-2">
-    <article class="panel"><h3>Operating status</h3><p>Thiếu status là missing, không phải “đã đóng cửa”.</p>{_stacked_bar(statuses)}
-      <div class="callout">Open: {_fmt_pct(status_pct.get("open", 0))} · permanently closed: {_fmt_pct(status_pct.get("permanently_closed", 0))} · thiếu: {_fmt_pct(status_pct.get("(null)", 0))}. Không dùng giá trị thiếu để suy diễn closure.</div>
+    <article class="panel"><h3>Trạng thái hoạt động</h3><p>Thiếu status là missing, không phải “đã đóng cửa”.</p>{_stacked_bar(statuses)}
+      <div class="callout">Đang mở theo nguồn: {_fmt_pct(status_pct.get("open", 0))} · đóng cửa vĩnh viễn: {_fmt_pct(status_pct.get("permanently_closed", 0))} · thiếu: {_fmt_pct(status_pct.get("(null)", 0))}. Không dùng giá trị thiếu để suy diễn closure.</div>
     </article>
-    <article class="panel"><h3>Confidence bins</h3><p>Median {_number(metrics["confidence_median"]):.3f} · mean {_number(metrics["confidence_avg"]):.3f}. Không có đối chiếu ground truth trong spike.</p>{_column_chart(confidence_rows)}</article>
+    <article class="panel"><h3>Các khoảng confidence</h3><p>Median {_number(metrics["confidence_median"]):.3f} · mean {_number(metrics["confidence_avg"]):.3f}. Không có đối chiếu ground truth trong spike.</p>{_column_chart(confidence_rows)}</article>
   </div>
   <div class="callout green">Geometry: {_fmt_int(geometry["valid_count"])} hợp lệ, {_fmt_int(geometry["invalid_count"])} không hợp lệ, {_fmt_int(geometry["null_count"])} null và {_fmt_int(geometry["empty_count"])} rỗng. Geometry hợp lệ không chứng minh pin chính xác ngoài thực tế.</div>
 
-  <div class="section-head"><div><div class="section-kicker">04 / Rights & provenance</div><h2>License hỗn hợp — phân phối đang khóa</h2></div><div class="section-note">Đếm source-item scopes, không phải số doanh nghiệp duy nhất. Một feature có thể xuất hiện trong nhiều scope/license.</div></div>
+  <div class="section-head"><div><div class="section-kicker">04 / Quyền và nguồn gốc</div><h2>License hỗn hợp — phân phối đang khóa</h2></div><div class="section-note">Đếm phạm vi source item, không phải số doanh nghiệp duy nhất. Một feature có thể xuất hiện trong nhiều phạm vi/license.</div></div>
   <div class="grid-2">
-    <article class="panel"><h3>Source-item entries theo license</h3><p>Giữ nguyên field-level provenance trong `sources[*].property`.</p>{license_chart}<div class="callout">Inventory có {len(licenses)} tổ hợp provider/dataset/license/property; code quan sát: {", ".join(_escape(item["license"]) for item in license_summary)}. Không thấy ODbL trong snapshot Places này; join OSM vẫn cần rà riêng.</div></article>
+    <article class="panel"><h3>Số mục nguồn theo license</h3><p>Giữ nguyên provenance cấp trường trong `sources[*].property`.</p>{license_chart}<div class="callout">Inventory có {len(licenses)} tổ hợp provider/dataset/license/property; code quan sát: {", ".join(_escape(item["license"]) for item in license_summary)}. Không thấy ODbL trong snapshot Places này; join OSM vẫn cần rà riêng.</div></article>
     <article class="panel"><h3>Điều kiện phát hành hiện tại</h3><div class="table-scroll"><table class="meta-table"><tbody>
       <tr><td>CDLA-Permissive-2.0</td><td>Dùng/sửa/chia sẻ; khi chia sẻ Data, kèm toàn văn license.</td></tr>
       <tr><td>Apache-2.0</td><td>Kèm license, NOTICE áp dụng, giữ notices và đánh dấu sửa đổi.</td></tr>
@@ -651,22 +638,22 @@ def _render_html(report_dir: Path) -> str:
   </div>
   {_license_table(license_summary)}
 
-  <div class="section-head"><div><div class="section-kicker">05 / Decision board</div><h2>Bằng chứng, giả định và điểm dừng</h2></div><div class="section-note">Dùng phần này để quyết định hành động tiếp theo, không dùng làm sales claim.</div></div>
+  <div class="section-head"><div><div class="section-kicker">05 / Bảng quyết định</div><h2>Bằng chứng, giả định và điểm dừng</h2></div><div class="section-note">Dùng phần này để quyết định hành động tiếp theo, không dùng làm nội dung quảng cáo.</div></div>
   <div class="evidence-grid">
     <article class="evidence-card"><h3>Đã đo</h3><ul><li>{_fmt_int(row_count)} feature sau lọc.</li><li>{_fmt_int(metrics["distinct_id_count"])} ID phân biệt; null/trùng bằng 0.</li><li>Phone, website, taxonomy và geometry đã được đo.</li></ul></article>
     <article class="evidence-card unknown"><h3>Chưa biết</h3><ul><li>Buyer nào có vấn đề đủ cấp thiết.</li><li>Ai trả tiền, mức giá và định dạng cần mua.</li><li>Freshness, accuracy, deliverability và retention.</li></ul></article>
     <article class="evidence-card stop"><h3>Điểm dừng</h3><ul><li>Không xuất bản record nguồn khi rights/NOTICE chưa map cho sản phẩm.</li><li>Không build nếu chưa có pain point và tín hiệu thanh toán.</li><li>Không dùng dữ liệu cá nhân hoặc nguồn enrichment chưa duyệt.</li></ul></article>
   </div>
 
-  <div class="section-head"><div><div class="section-kicker">06 / Next work</div><h2>Task kế tiếp: tìm vấn đề trả tiền thật</h2></div><div class="section-note">Theo roadmap hiện tại, ROAD-13 là pain-point scan trước Gate 2; chưa chuyển sang xây pipeline niche.</div></div>
+  <div class="section-head"><div><div class="section-kicker">06 / Việc tiếp theo</div><h2>Kiểm chứng Top 3 trước khi làm MVP</h2></div><div class="section-note">ROAD-13 và ROAD-15 đã hoàn thành. ROAD-12 / Gate 2 vẫn đang xử lý; chưa có quyền phát hành record nguồn.</div></div>
   <div class="steps">
-    <div class="step"><strong>Thu tín hiệu</strong><span>Ghi 20–25 pain point ở review, cộng đồng ngành và job freelance; mỗi dòng có buyer, công việc hiện tại, URL và ngày.</span></div>
-    <div class="step"><strong>Thu hẹp có tiêu chí</strong><span>Gom 8–10 nhóm, rồi chọn Top 3 chỉ khi pain lặp lại, fit dữ liệu và không vướng rights/marketplace.</span></div>
-    <div class="step"><strong>Kiểm chứng trả tiền</strong><span>Phỏng vấn buyer hoặc thử offer/mockup không chứa record nguồn. Ghi rõ “chưa có bằng chứng” nếu chưa thấy giao dịch.</span></div>
+    <div class="step"><strong>Rà quyền nguồn</strong><span>Xác minh CSLB, Overture source/property, điều khoản website và quyền của output dự kiến; không đưa record thật vào sample trước clearance.</span></div>
+    <div class="step"><strong>Kiểm chứng buyer</strong><span>Dùng mockup không chứa record nguồn để phỏng vấn buyer; job listing/review không chứng minh đã có giao dịch.</span></div>
+    <div class="step"><strong>Prototype an toàn</strong><span>Bắt đầu CRM company hygiene bằng dữ liệu tổng hợp và file chạy local; chỉ qua Sample &amp; Smoke Test sau khi có feedback và data contract.</span></div>
   </div>
-  <div class="callout">Ứng viên chỉ để định hướng tìm kiếm ban đầu: `real_estate_agent`, `contractor`, `automotive_repair`, `insurance_agency`, `professional_service`, `doctors_office`. Đây không phải lựa chọn niche hoặc bằng chứng nhu cầu.</div>
+  <div class="callout">Danh mục coverage ban đầu gồm `real_estate_agent`, `contractor`, `automotive_repair`, `insurance_agency`, `professional_service`, `doctors_office`. Đây là màn hình kỹ thuật, không thay thế Top 3 sản phẩm hoặc bằng chứng nhu cầu.</div>
 
-  <div class="section-head"><div><div class="section-kicker">07 / Provenance</div><h2>Snapshot và phương pháp</h2></div><div class="section-note">Báo cáo này được dựng từ CSV/JSON tổng hợp trong repo; không đọc hoặc nhúng business record thô.</div></div>
+  <div class="section-head"><div><div class="section-kicker">07 / Nguồn và phương pháp</div><h2>Snapshot và phương pháp</h2></div><div class="section-note">Báo cáo này được dựng từ CSV/JSON tổng hợp trong repo; không đọc hoặc nhúng record doanh nghiệp thô.</div></div>
   <article class="panel"><div class="table-scroll"><table class="meta-table"><tbody>
     <tr><td>Release / theme / type</td><td><span class="mono">{_escape(dataset["resolved_release"])} / places / place</span></td></tr>
     <tr><td>Phạm vi</td><td>{_escape(run["region_coverage"])}; lọc geometry được Census polygon bao phủ hoàn toàn.</td></tr>
